@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0e0e0c">
+<meta name="description" content="Agende seu horário no District Barber Club.">
+<title>District Barber Club — Agendamento online</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#0e0e0c;--ink:#f3f1e8;--mute:#aaa79d;--line:#34332e;--card:#171715;box-sizing:border-box}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 85% 15%,rgba(98,75,60,.2),transparent 40%),radial-gradient(ellipse at 15% 70%,rgba(120,20,20,.14),transparent 35%),var(--bg);color:var(--ink);font:300 16px/1.6 Jost,system-ui,sans-serif}
+.wrap{max-width:1040px;margin:auto;padding:0 24px}header{display:flex;justify-content:space-between;align-items:center;padding:28px 0}.logo{display:flex;flex-direction:column;line-height:1;text-decoration:none;color:var(--ink)}.logo b{font:400 22px Marcellus,Georgia,serif;letter-spacing:.04em}.logo small{font-size:9px;letter-spacing:.4em;margin-top:7px;text-transform:uppercase}
+.btn{display:inline-block;border:1px solid var(--ink);background:var(--ink);color:var(--bg);padding:13px 22px;font:500 12px Jost,sans-serif;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;cursor:pointer}.btn:hover{opacity:.85}.btn:disabled{opacity:.35;cursor:not-allowed}.btn.ghost{background:transparent;color:var(--ink)}
+.hero{text-align:center;padding:clamp(75px,13vw,130px) 0 100px}.hero h1{font:400 clamp(52px,12vw,128px)/1 Marcellus,Georgia,serif;letter-spacing:.02em;margin:0}.hero .sub{letter-spacing:.6em;font-size:13px;margin:26px 0 0 .6em;text-transform:uppercase}.hero p{max-width:460px;margin:36px auto;color:var(--mute)}
+section{padding:76px 0;border-top:1px solid var(--line)}.eyebrow{font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--mute)}h2{font:400 clamp(30px,5vw,46px)/1.15 Marcellus,Georgia,serif;margin:10px 0 36px}.list{display:grid}.svc{display:flex;justify-content:space-between;gap:20px;padding:21px 0;border-bottom:1px solid var(--line)}.svc h3{font:400 22px Marcellus,Georgia,serif;margin:0}.svc p{margin:2px 0 0;color:var(--mute);font-size:14px}.svc .price{font:400 22px Marcellus,Georgia,serif;white-space:nowrap}
+.book{display:grid;gap:30px}.step h3{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--mute);font-weight:400;margin:0 0 12px}.chips{display:flex;flex-wrap:wrap;gap:10px}.chip{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:11px 16px;font:400 14px Jost,sans-serif;cursor:pointer}.chip:hover{border-color:var(--ink)}.chip.selected{background:var(--ink);color:var(--bg);border-color:var(--ink)}.chip small{display:block;opacity:.65;font-size:11px}.chip:disabled{opacity:.3;text-decoration:line-through;cursor:not-allowed}.strip{display:flex;gap:10px;overflow-x:auto;padding-bottom:6px}.strip .chip{min-width:70px;text-align:center;flex:0 0 auto}.strip .chip b{display:block;font:400 22px Marcellus,Georgia,serif}
+input,select{width:100%;border:0;border-bottom:1px solid var(--ink);background:transparent;color:var(--ink);padding:12px 0;font:300 16px Jost,sans-serif;outline:0;margin-bottom:14px}select option{background:var(--bg);color:var(--ink)}input::placeholder{color:var(--mute)}.fields{display:grid;gap:0 24px;grid-template-columns:1fr 1fr}@media(max-width:620px){.fields{grid-template-columns:1fr}}
+.sum{border:1px solid var(--line);background:var(--card);padding:26px}.sum .row{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid var(--line);font-size:15px}.sum .row span:first-child{color:var(--mute)}.sum .total{font:400 26px Marcellus,Georgia,serif;margin:18px 0 20px;display:flex;justify-content:space-between}.note{font-size:13px;color:var(--mute);margin:14px 0 0}.info{display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}.info p{margin:6px 0 0;color:var(--mute)}footer{border-top:1px solid var(--line);padding:34px 20px;text-align:center;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--mute)}:focus-visible{outline:2px solid #c7b995;outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><a class="logo" href="#top"><b>DISTRICT</b><small>Barber Club</small></a><a class="btn" href="#agendar">Agendar</a></header>
+<main>
+<div class="hero" id="top"><h1>DISTRICT</h1><div class="sub">Barber Club</div><p>Corte, barba e cuidado em um ambiente reservado. Escolha o serviço, o profissional e o horário para solicitar seu agendamento.</p><a class="btn" href="#agendar">Agendar horário</a></div>
+<section id="servicos"><div class="eyebrow">Serviços</div><h2>O essencial, bem feito.</h2><div class="list" id="svcList"></div></section>
+<section id="agendar"><div class="eyebrow">Agendamento online</div><h2>Solicite seu horário.</h2><div class="book" id="book"></div></section>
+<section id="info"><div class="info"><div><div class="eyebrow">Horários</div><p>Seg a Sáb · 09h às 19h<br>Domingo · fechado</p></div><div><div class="eyebrow">Endereço</div><p>Rua Exemplo, 123 — Centro<br><small>Substitua pelo endereço real.</small></p></div><div><div class="eyebrow">Contato</div><p><a href="https://wa.me/5538991177228" style="color:inherit">WhatsApp · (38) 99117-7228</a><br>@districtbarberclub</p></div></div></section>
+</main></div><footer>© District Barber Club</footer>
+<script>
+const WHATSAPP="5538991177228";
+const services=[{id:0,n:"Corte",d:"Tesoura ou máquina, finalizado com navalha",p:10,t:45},{id:1,n:"Barba",d:"Toalha quente, navalha e hidratação",p:5,t:30},{id:2,n:"Corte + Barba",d:"O combo completo do clube",p:15,t:75},{id:3,n:"Sobrancelha",d:"Alinhamento na navalha",p:10,t:15}];
+const barbers=["Qualquer profissional","Rafael","Diego","Lucas"];
+const slots=[];for(let h=9;h<19;h++){slots.push(`${String(h).padStart(2,"0")}:00`);slots.push(`${String(h).padStart(2,"0")}:30`)}
+const days=[];{const d=new Date();d.setHours(0,0,0,0);for(let i=0;i<21&&days.length<12;i++){const x=new Date(d);x.setDate(d.getDate()+i);if(x.getDay()!==0)days.push(x)}}
+const S={svc:null,barber:0,day:null,time:null,name:""};const brl=v=>"R$ "+v.toFixed(0);
+document.getElementById("svcList").innerHTML=services.map(s=>`<div class="svc"><div><h3>${s.n}</h3><p>${s.d} · ${s.t} min</p></div><div class="price">${brl(s.p)}</div></div>`).join("");
+function isPast(day,time){const [h,m]=time.split(":").map(Number),d=new Date(day);d.setHours(+h,+m,0,0);return d<=new Date()}
+function render(){const el=document.getElementById("book"),dayChips=days.map((d,i)=>`<button type="button" class="chip ${S.day===i?"selected":""}" data-day="${i}" aria-pressed="${S.day===i}"><small>${d.toLocaleDateString("pt-BR",{weekday:"short"}).replace(".","")}</small><b>${d.getDate()}</b><small>${d.toLocaleDateString("pt-BR",{month:"short"}).replace(".","")}</small></button>`).join("");
+let timeChips=`<p class="note">Escolha uma data para ver os horários.</p>`;if(S.day!==null){timeChips=`<div class="chips">`+slots.map(t=>{const off=isPast(days[S.day],t);return `<button type="button" class="chip ${S.time===t?"selected":""}" data-time="${t}" ${off?"disabled":""}>${t}</button>`}).join("")+`</div>`}
+const s=S.svc===null?null:services.find(x=>x.id===S.svc),ready=!!(s&&S.day!==null&&S.time);
+el.innerHTML=`<div class="step"><h3>1 · Serviço</h3><div class="chips">${services.map(x=>`<button type="button" class="chip ${S.svc===x.id?"selected":""}" data-svc="${x.id}" aria-pressed="${S.svc===x.id}">${x.n}<small>${brl(x.p)} · ${x.t} min</small></button>`).join("")}</div></div>
+<div class="step"><h3>2 · Profissional</h3><select id="barber" aria-label="Escolha o profissional">${barbers.map((b,i)=>`<option value="${i}" ${S.barber===i?"selected":""}>${b}</option>`).join("")}</select></div>
+<div class="step"><h3>3 · Data</h3><div class="strip">${dayChips}</div></div><div class="step"><h3>4 · Horário</h3>${timeChips}</div>
+<div class="step"><h3>5 · Seus dados</h3><div class="fields"><input id="nm" placeholder="Seu nome" autocomplete="name" required><input id="ph" placeholder="Seu WhatsApp (opcional)" inputmode="tel" autocomplete="tel"></div></div>
+<div class="sum"><div class="row"><span>Serviço</span><span>${s?s.n:"—"}</span></div><div class="row"><span>Data e hora</span><span>${S.day!==null&&S.time?days[S.day].toLocaleDateString("pt-BR",{day:"2-digit",month:"2-digit"})+" · "+S.time:"—"}</span></div><div class="row"><span>Profissional</span><span>${barbers[S.barber]}</span></div><div class="total"><span>Total</span><span>${s?brl(s.p):"—"}</span></div><button type="button" class="btn" id="go" ${ready?"":"disabled"}>Continuar no WhatsApp</button><p class="note">O horário só será confirmado após a barbearia responder no WhatsApp. A disponibilidade é confirmada pela equipe.</p></div>`;
+const keep=()=>{S.name=document.getElementById("nm")?.value||S.name};el.querySelectorAll("[data-svc]").forEach(b=>b.onclick=()=>{keep();S.svc=+b.dataset.svc;render()});el.querySelectorAll("[data-day]").forEach(b=>b.onclick=()=>{keep();S.day=+b.dataset.day;S.time=null;render()});el.querySelectorAll("[data-time]").forEach(b=>b.onclick=()=>{keep();S.time=b.dataset.time;render()});document.getElementById("barber").onchange=e=>{keep();S.barber=+e.target.value;render()};document.getElementById("nm").value=S.name;document.getElementById("go").onclick=()=>{keep();if(!S.name.trim()){document.getElementById("nm").focus();return}const date=days[S.day].toLocaleDateString("pt-BR",{weekday:"long",day:"2-digit",month:"long"});const phone=document.getElementById("ph").value.trim();const msg=`Olá, District Barber Club! Gostaria de solicitar um agendamento.\n\nNome: ${S.name.trim()}${phone?`\nMeu WhatsApp: ${phone}`:""}\nServiço: ${s.n} (${brl(s.p)})\nProfissional: ${barbers[S.barber]}\nData: ${date}\nHorário: ${S.time}`;window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`,"_blank","noopener,noreferrer")}}
+render();
+</script>
+</body></html>
